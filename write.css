@@ -1,0 +1,227 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PairToucan";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101653@peartoucan-bold/peartoucan-bold/PearToucan-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PairToucan";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101653@peartoucan-bold/peartoucan-bold/PearToucan-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PairToucan";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101653@peartoucan-bold/peartoucan-bold/PearToucan-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family: "Pretendard";
+}
+
+body {
+  user-select: none;
+  min-height: 100vh;
+  background-color: #f3f3f3;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.sub {
+  color: #555;
+}
+
+p {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 28px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+.logo {
+  font-family: "PairToucan";
+  font-size: 26px;
+  color: #072ac8;
+  display: block;
+  text-decoration: none;
+  width: fit-content;
+  margin-bottom: 28px;
+}
+.logo:hover {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  height: 40px;
+  padding-inline: 15px;
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+}
+
+button {
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+select {
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+}
+
+textarea {
+  outline: none;
+  padding: 15px;
+  resize: none;
+  border: 1px solid #c5c5c5;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  padding: 30px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "b1 b2" "b3 b3" "b4 b4";
+  gap: 30px;
+}
+form div {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+form div label {
+  margin-bottom: 10px;
+}
+form div textarea {
+  height: 250px;
+  border: 1px solid #c5c5c5;
+}
+form div:nth-of-type(3) {
+  position: relative;
+}
+form div span {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  color: #555;
+}
+form div:last-of-type {
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
+}
+form div:last-of-type button {
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+form div:last-of-type button:hover {
+  background-color: #e0e0e0;
+}
+form div:last-of-type button:last-child {
+  background-color: #072ac8;
+  color: #fff;
+}
+form div:last-of-type button:last-child:hover {
+  background: rgb(5.6202898551, 33.7217391304, 160.5797101449);
+}

@@ -1,0 +1,346 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PairToucan";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101653@peartoucan-bold/peartoucan-bold/PearToucan-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PairToucan";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101653@peartoucan-bold/peartoucan-bold/PearToucan-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PairToucan";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101653@peartoucan-bold/peartoucan-bold/PearToucan-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family: "Pretendard";
+}
+
+body {
+  user-select: none;
+  min-height: 100vh;
+  background-color: #f3f3f3;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.sub {
+  color: #555;
+}
+
+p {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 28px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+.logo {
+  font-family: "PairToucan";
+  font-size: 26px;
+  color: #072ac8;
+  display: block;
+  text-decoration: none;
+  width: fit-content;
+  margin-bottom: 28px;
+}
+.logo:hover {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  height: 40px;
+  padding-inline: 15px;
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+}
+
+button {
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+select {
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+}
+
+textarea {
+  outline: none;
+  padding: 15px;
+  resize: none;
+  border: 1px solid #c5c5c5;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  padding: 30px;
+  user-select: text;
+}
+
+.container {
+  margin-top: 39px;
+  border: 1px solid #c5c5c5;
+  margin-bottom: 101px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.container > div:not(.others) {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 30px 20px;
+  border-bottom: 1px solid #c5c5c5;
+}
+.container > div:not(.others) h1 {
+  margin-top: 2px;
+}
+.container > div:not(.others) > div {
+  height: 100%;
+  display: flex;
+}
+.container > div:not(.others) > div:first-of-type {
+  flex-direction: column;
+}
+.container > div:not(.others) > div:last-of-type {
+  justify-content: space-between;
+}
+.container > div:not(.others) ul {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.container > div:not(.others) ul:last-of-type {
+  justify-content: space-between;
+}
+.container > div:not(.others) ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  font-size: 16px;
+  color: #555;
+}
+.container > div:not(.others) ul li form {
+  display: flex;
+  justify-content: space-between;
+  gap: 17px;
+}
+.container > div:not(.others) ul li button {
+  display: flex;
+  align-items: center;
+  border: none;
+  font-size: inherit;
+}
+.container > div:not(.others) ul li button.on i {
+  color: #072ac8;
+}
+.container > div:not(.others) ul li i {
+  margin-right: 5px;
+}
+.container > p {
+  padding: 20px 20px;
+  width: 70%;
+  min-height: 180px;
+}
+.container .others {
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+  border-top: 1px solid #c5c5c5;
+}
+.container .others > div {
+  display: flex;
+  align-items: center;
+}
+.container .others > div:last-of-type {
+  border-top: 1px solid #c5c5c5;
+  padding-top: 5px;
+}
+.container .others > div > span {
+  margin-right: 15px;
+  width: 60px;
+  color: #555;
+}
+.container .others > div > div {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.container .others > div > div div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #555;
+}
+.container .others > div > div div span + span::before {
+  content: "·";
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.container .others > div > div div:last-of-type {
+  gap: 10px;
+}
+.container .others > div > div div:last-of-type a {
+  color: #555;
+}
+.container #comments {
+  border-top: 1px solid #c5c5c5;
+  scroll-margin-top: 24px;
+}
+.container #comments h3 {
+  margin-bottom: 10px;
+}
+.container #comments form {
+  height: 130px;
+  display: flex;
+}
+.container #comments form textarea {
+  width: calc(100% - 110px);
+  height: 100%;
+}
+.container #comments form button {
+  width: 110px;
+  height: 100%;
+  background-color: #e0e0e0;
+  color: #000;
+  font-size: 18px;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #c5c5c5;
+}
+.container #comments span {
+  color: #000;
+}
+.container #comments ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  margin-top: 20px;
+}
+.container #comments ul li {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: #fff;
+}
+.container #comments ul li:not(.container #comments ul li:first-of-type) {
+  border-top: 1px solid #c5c5c5;
+  padding-top: 20px;
+}
+.container #comments ul li div {
+  margin-bottom: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.container #comments ul li p {
+  margin-top: 5px;
+  width: 100%;
+  height: fit-content;
+  color: #000;
+}

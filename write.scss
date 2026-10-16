@@ -1,0 +1,83 @@
+@use 'common' as *;
+@use 'sass:color';
+
+body
+{
+    padding: 30px;       
+}
+
+form
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+    "b1 b2"
+    "b3 b3"
+    "b4 b4";
+    gap: 30px;
+
+    div
+    {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+
+        label
+        {
+            margin-bottom: 10px;
+        }
+
+        textarea
+        {
+            height: 250px;
+            border: 1px solid $border-color;
+        }
+
+        &:nth-of-type(3)
+        {
+            position: relative;
+        }
+        
+        span
+        {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 12px;
+            color: $gray-color;
+        }
+
+        &:last-of-type
+        {
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 20px;
+
+            button
+            {
+                width: 150px;
+                height: 40px;
+                border-radius: 5px;
+                border: 1px solid $border-color;
+                cursor: pointer;
+                transition: background-color 0.25s;
+
+                &:hover
+                {
+                    background-color: #e0e0e0;
+                }
+
+                &:last-child
+                {
+                    background-color: $key-color;
+                    color: #fff;
+
+                    &:hover
+                    {
+                        background: color.adjust($key-color, $lightness: -8%);
+                    }
+                }
+            }
+        }
+    }
+}

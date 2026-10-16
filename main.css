@@ -1,0 +1,390 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PairToucan";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101653@peartoucan-bold/peartoucan-bold/PearToucan-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PairToucan";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101653@peartoucan-bold/peartoucan-bold/PearToucan-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PairToucan";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/2607101653@peartoucan-bold/peartoucan-bold/PearToucan-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family: "Pretendard";
+}
+
+body {
+  user-select: none;
+  min-height: 100vh;
+  background-color: #f3f3f3;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.sub {
+  color: #555;
+}
+
+p {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 28px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+.logo {
+  font-family: "PairToucan";
+  font-size: 26px;
+  color: #072ac8;
+  display: block;
+  text-decoration: none;
+  width: fit-content;
+  margin-bottom: 28px;
+}
+.logo:hover {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  height: 40px;
+  padding-inline: 15px;
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+}
+
+button {
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+select {
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+}
+
+textarea {
+  outline: none;
+  padding: 15px;
+  resize: none;
+  border: 1px solid #c5c5c5;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  display: flex;
+  position: relative;
+}
+
+main {
+  min-width: 0;
+  flex-grow: 1;
+  padding: 30px;
+}
+main > h1 {
+  margin-bottom: 5px;
+}
+main a {
+  color: #072ac8;
+}
+main .logo {
+  margin-bottom: 39px;
+}
+main .ranking {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+main .ranking ol {
+  flex-shrink: 0;
+  width: calc((100% - 30px) / 3);
+  background-color: #fff;
+  border: 1px solid #c5c5c5;
+  padding: 15px 22px;
+  border-radius: 5px;
+}
+main .ranking ol h4 {
+  margin-bottom: 15px;
+}
+main .ranking ol li {
+  margin-left: 20px;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+main .ranking ol li span {
+  margin-left: 5px;
+}
+main .ranking ol li::marker {
+  color: #555;
+}
+main .ranking ol li a {
+  color: #000;
+}
+main .ranking ol li i {
+  vertical-align: middle;
+}
+
+.articleArea {
+  border-left: 1px solid #c5c5c5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 400px;
+  flex-shrink: 0;
+  height: 100vh;
+  padding: 30px;
+  padding-top: 100px;
+  padding-bottom: 70px;
+  overflow-y: scroll;
+  background-color: #f3f3f3;
+  mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+  position: relative;
+}
+.articleArea form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 336px;
+  top: 30px;
+  left: 30px;
+}
+.articleArea form input {
+  width: 160px;
+}
+.articleArea form select {
+  outline: none;
+  width: 85px;
+  height: 40px;
+  padding-left: 12px;
+  font-size: 12px;
+}
+.articleArea span {
+  text-align: center;
+}
+
+.article {
+  width: 336px;
+  height: 83px;
+  padding: 15px 20px;
+  background-color: #fff;
+  border: 1px solid #c5c5c5;
+  border-radius: 5px;
+  transition: box-shadow 0.25s;
+  position: relative;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.article:hover {
+  box-shadow: 0px 4px 10px -8px #222;
+  text-decoration: none;
+}
+.article div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.article div div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+}
+.article span {
+  font-size: 13px;
+}
+.article .abs {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+}
+.article ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 17px;
+}
+.article ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  font-size: 13px;
+}
+.article ul li i {
+  margin-right: 5px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 25px;
+  width: 100%;
+  height: 50px;
+}
+.actions button {
+  width: calc((100% - 75px) / 4);
+  height: 100%;
+  transition: background-color 0.25s;
+}
+.actions button:hover {
+  background-color: #f0f0f0;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 30px;
+  font-size: 15px;
+  z-index: 1;
+}
+.copyright a {
+  color: #000;
+}
+
+@media (max-width: 1100px) {
+  body {
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .articleArea {
+    width: 100%;
+    margin-bottom: 30px;
+    overflow-y: visible;
+    height: auto !important;
+    mask-image: none !important;
+    border-left: none;
+  }
+  .actions {
+    gap: 15px;
+  }
+  .actions button {
+    width: calc((100% - 45px) / 4);
+  }
+  .ranking {
+    flex-direction: column;
+  }
+  .ranking ol {
+    width: 100% !important;
+  }
+  form {
+    width: calc(100% - 60px) !important;
+  }
+  form input {
+    width: calc(100% - 176px) !important;
+  }
+  .article {
+    width: 100% !important;
+  }
+  h1 {
+    font-size: 26px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}
