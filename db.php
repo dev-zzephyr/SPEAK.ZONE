@@ -11,8 +11,12 @@ $cfg = file_exists(__DIR__ . '/config.local.php')
         'pass' => getenv('DB_PASS'),
     ];
 
+$ca = file_exists('/etc/secrets/ca.pem')
+    ? '/etc/secrets/ca.pem'
+    : __DIR__ . '/ca.pem';
+
 $conn = mysqli_init();
-$conn->ssl_set(null, null, __DIR__ . '/ca.pem', null, null);
+$conn->ssl_set(null, null, __DIR__ . $ca, null, null);
 $conn->real_connect(
     $cfg['host'], $cfg['user'], $cfg['pass'],
     $cfg['name'], (int)$cfg['port'], null, MYSQLI_CLIENT_SSL
