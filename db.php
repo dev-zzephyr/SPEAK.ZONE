@@ -16,14 +16,13 @@ $ca = file_exists('/etc/secrets/ca.pem')
     : __DIR__ . '/ca.pem';
 
 $conn = mysqli_init();
-$conn->ssl_set(null, null, __DIR__ . $ca, null, null);
+$conn->ssl_set(null, null, $ca, null, null);
 $conn->real_connect(
     $cfg['host'], $cfg['user'], $cfg['pass'],
     $cfg['name'], (int)$cfg['port'], null, MYSQLI_CLIENT_SSL
 );
 $conn->set_charset('utf8mb4');
 date_default_timezone_set('Asia/Seoul');
-
 
 if (!function_exists('timeAgo')) {
     function timeAgo($datetime) {
