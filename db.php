@@ -11,9 +11,9 @@ $cfg = file_exists(__DIR__ . '/config.local.php')
         'pass' => getenv('DB_PASS'),
     ];
 
-$ca = file_exists('/etc/secrets/ca.pem')
-    ? '/etc/secrets/ca.pem'
-    : __DIR__ . '/ca.pem';
+$ca = '/etc/secrets/ca.pem';
+if (!file_exists($ca))
+    $ca = __DIR__ . '/ca.pem';
 
 $conn = mysqli_init();
 $conn->ssl_set(null, null, $ca, null, null);
