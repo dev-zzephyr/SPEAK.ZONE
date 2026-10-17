@@ -38,5 +38,3 @@ try {
 
 header("Location: view.php?id=$post_id#comments");
 exit;
-
-?>

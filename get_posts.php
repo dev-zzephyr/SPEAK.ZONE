@@ -30,22 +30,21 @@ try {
             $stmt = $conn->prepare("SELECT * FROM posts ORDER BY $order_sql");
         }
     }
-    else {
-        if ($query != '') {
-            $stmt = $conn->prepare("SELECT * FROM users WHERE username LIKE ? ORDER BY $order_sql");
-            $stmt->bind_param('s', $param);
-        }
-        else {
-            $stmt = $conn->prepare("SELECT * FROM users ORDER BY $order_sql"); # users일때 select의 option 수정 필요
-        }
-    }
+    // else {
+    //     if ($query != '') {
+    //         $stmt = $conn->prepare("SELECT * FROM users WHERE username LIKE ? ORDER BY $order_sql");
+    //         $stmt->bind_param('s', $param);
+    //     }
+    //     else {
+    //         $stmt = $conn->prepare("SELECT * FROM users ORDER BY $order_sql"); # users일때 select의 option 수정 필요
+    //     }
+    // }
 
     $stmt->execute();
     $posts = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-
     $stmt->close();
 
 } catch (mysqli_sql_exception $e) {
-
+    error_log('get_posts failed: ' . $e->getMessage());
+    $posts = [];
 }
-?>

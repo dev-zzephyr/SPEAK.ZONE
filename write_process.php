@@ -98,4 +98,3 @@ if ($action == "write") {
         exit;
     }
 }
-?>
