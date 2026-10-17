@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Pretendard";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2") format("woff2");
@@ -120,6 +121,11 @@ h3 {
 
 h4 {
   font-size: 20px;
+}
+
+.by_admin::before {
+  content: "♔";
+  margin-right: 3px;
 }
 
 .logo {

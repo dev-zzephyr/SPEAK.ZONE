@@ -17,7 +17,35 @@ main
         margin-bottom: 5px;
     }
 
-    a
+    & > div
+    {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        a:not(h1 > a, li > a)
+        {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            transition: background-color 0.25s;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid $border-color;
+            border-radius: 5px;
+
+            &:hover
+            {
+                background-color: $hover-color;
+                text-decoration: none;
+            }
+        }
+    }
+
+    h1 > a
     {
         color: $key-color;
     }
@@ -32,6 +60,8 @@ main
         display: flex;
         gap: 15px;
         margin-top: 30px;
+        min-height: 167px;
+        align-items: stretch;
 
         ol
         {

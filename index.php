@@ -40,10 +40,16 @@ $stmt->close();
 <main>
     <a href="index.php" class="logo">SPEAK.ZONE</a>
     <?php if (isset($_SESSION['user']) && $_SESSION['user'] == 'admin'): ?>
-        <h1>환영합니다, <a href="logout_process.php" title="로그아웃"><?php echo htmlspecialchars($_SESSION['user']) ?></a>님!</h1>
+        <div>
+            <h1>환영합니다, <a href="#" title="내 계정"><?php echo htmlspecialchars($_SESSION['user']) ?></a>님!</h1>
+            <a href="logout_process.php" title="로그아웃"><i class="ph ph-sign-out"></i></a>
+        </div>
         <h3>공지사항을 작성하고 유저들과 게시물을 검토하세요.</h3>
     <?php elseif (isset($_SESSION['user'])): ?>
-        <h1>환영합니다, <a href="logout_process.php" title="로그아웃"><?php echo htmlspecialchars($_SESSION['user']) ?></a>님!</h1>
+        <div>
+            <h1>환영합니다, <a href="#" title="내 계정"><?php echo htmlspecialchars($_SESSION['user']) ?></a>님!</h1>
+            <a href="logout_process.php" title="로그아웃"><i class="ph ph-sign-out"></i></a>
+        </div>
         <h3>게시물을 자유롭게 작성하고 읽어보세요.</h3>
     <?php else: ?>
         <h1>환영합니다!</h1>
@@ -64,7 +70,10 @@ $stmt->close();
             <h4>가장 인기있는 글</h4>
             <?php if (!empty($trendingPosts)): ?>
                 <?php foreach($trendingPosts as $row): ?>
-                    <li><a href="view.php?id=<?= $row['id'] ?>"><?= htmlspecialchars($row['title']) ?></a><span>(<i class="ph ph-thumbs-up"></i> <?= $row['likes'] ?>)</span></li>
+                    <li>
+                        <a href="view.php?id=<?= $row['id'] ?>"><?= htmlspecialchars($row['title']) ?></a>
+                        <!-- <span>(<i class="ph ph-thumbs-up"></i> <?= $row['likes'] ?>)</span> -->
+                    </li>
                 <?php endforeach; ?>
             <?php else: ?>
                 <li>아직 인기있는 글이 없습니다</li>
@@ -74,7 +83,14 @@ $stmt->close();
             <h4>가장 인기있는 사용자</h4>
             <?php if (!empty($popularUsers)): ?>
                 <?php foreach($popularUsers as $row): ?>
-                    <li><a href="#"><?= htmlspecialchars($row['username']) ?></a><span>(<i class="ph ph-thumbs-up"></i> <?= $row['total_likes'] ?>)</span></li>
+                    <li>
+                        <?php if($row['username'] == 'admin'): ?>
+                            <a href="#" class="by_admin"><?= htmlspecialchars($row['username']) ?></a>
+                        <?php else: ?>
+                            <a href="#"><?= htmlspecialchars($row['username']) ?></a>
+                        <?php endif; ?>
+                        <!-- <span>(<i class="ph ph-thumbs-up"></i> <?= $row['total_likes'] ?>)</span> -->
+                    </li>
                 <?php endforeach; ?>
             <?php else: ?>
                 <li>아직 인기있는 사용자가 없습니다</li>
@@ -115,7 +131,11 @@ $stmt->close();
         <a href="view.php?id=<?= (int) $post['id'] ?>" class="article">
             <div>
                 <div>
-                    <span><?= htmlspecialchars($post['username']) ?></span>
+                    <?php if ($post['username'] == 'admin'): ?>
+                        <span class="by_admin"><?= htmlspecialchars($post['username']) ?></span>
+                    <?php else: ?>
+                        <span><?= htmlspecialchars($post['username']) ?></span>
+                    <?php endif; ?>
                     <ul>
                         <li><?= mb_substr(htmlspecialchars($post['created_at']), 0, 10) ?></li>
                     </ul>

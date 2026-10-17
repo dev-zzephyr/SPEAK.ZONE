@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Pretendard";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2") format("woff2");
@@ -122,6 +123,11 @@ h4 {
   font-size: 20px;
 }
 
+.by_admin::before {
+  content: "♔";
+  margin-right: 3px;
+}
+
 .logo {
   font-family: "PairToucan";
   font-size: 26px;
@@ -183,7 +189,29 @@ main {
 main > h1 {
   margin-bottom: 5px;
 }
-main a {
+main > div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+main > div a:not(h1 > a, li > a) {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  transition: background-color 0.25s;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #c5c5c5;
+  border-radius: 5px;
+}
+main > div a:not(h1 > a, li > a):hover {
+  background-color: #f0f0f0;
+  text-decoration: none;
+}
+main h1 > a {
   color: #072ac8;
 }
 main .logo {
@@ -193,6 +221,8 @@ main .ranking {
   display: flex;
   gap: 15px;
   margin-top: 30px;
+  min-height: 167px;
+  align-items: stretch;
 }
 main .ranking ol {
   flex-shrink: 0;

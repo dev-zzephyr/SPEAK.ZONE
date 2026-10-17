@@ -123,6 +123,11 @@ h4 {
   font-size: 20px;
 }
 
+.by_admin::before {
+  content: "♔";
+  margin-right: 3px;
+}
+
 .logo {
   font-family: "PairToucan";
   font-size: 26px;
