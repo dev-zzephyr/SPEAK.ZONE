@@ -343,7 +343,6 @@ body {
 .container #comments ul li:not(.container #comments ul li:first-of-type) {
   border-top: 1px solid #c5c5c5;
   padding-top: 20px;
-  background-color: red;
 }
 .container #comments ul li div {
   margin-bottom: 5px;
