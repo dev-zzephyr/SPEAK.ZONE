@@ -1,6 +1,14 @@
 <?php
 function client_ip() {
-    $ip = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? ($_SERVER['REMOTE_ADDR'] ?? '');
+    $ip = '';
+    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $parts = array_map('trim', explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']));
+        $n = count($parts);
+        if ($n >= 3) $ip = $parts[$n - 3];
+    }
+    if (!filter_var($ip, FILTER_VALIDATE_IP)) {
+        $ip = $_SERVER['REMOTE_ADDR'] ?? '';
+    }
     return filter_var($ip, FILTER_VALIDATE_IP) ? $ip : '';
 }
 
