@@ -4,15 +4,15 @@ session_start();
 require 'db.php';
 require 'get_posts.php';
 
-$stmt = $conn->prepare("SELECT category, COUNT(*) AS post_count FROM posts WHERE created_at >= NOW() - INTERVAL 7 DAY GROUP BY category ORDER BY post_count DESC LIMIT 5");
+$stmt = $conn->prepare("SELECT category, COUNT(*) AS post_count FROM posts GROUP BY category ORDER BY post_count DESC LIMIT 5");
 $stmt->execute();
 $trendingCategories = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
-$stmt = $conn->prepare("SELECT * FROM posts WHERE (likes > 0 AND created_at >= NOW() - INTERVAL 7 DAY) ORDER BY likes DESC, views DESC LIMIT 5");
+$stmt = $conn->prepare("SELECT * FROM posts WHERE likes > 0 ORDER BY likes DESC, views DESC LIMIT 5");
 $stmt->execute();
 $trendingPosts = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
-$stmt = $conn->prepare("SELECT username, SUM(likes) AS total_likes FROM posts WHERE created_at >= NOW() - INTERVAL 7 DAY GROUP BY username ORDER BY total_likes DESC LIMIT 5");
+$stmt = $conn->prepare("SELECT username, SUM(likes) AS total_likes FROM posts GROUP BY username ORDER BY total_likes DESC LIMIT 5");
 $stmt->execute();
 $popularUsers = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 

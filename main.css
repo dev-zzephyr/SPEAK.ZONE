@@ -211,7 +211,7 @@ main > div a:not(h1 > a, li > a):hover {
   background-color: #f0f0f0;
   text-decoration: none;
 }
-main h1 > a {
+main h1 a, main h3 a {
   color: #072ac8;
 }
 main .logo {
