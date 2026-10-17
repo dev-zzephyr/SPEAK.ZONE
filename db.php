@@ -11,13 +11,15 @@ $cfg = file_exists(__DIR__ . '/config.local.php')
         'pass' => getenv('DB_PASS'),
     ];
 
-$ca = '/etc/secrets/ca.pem';
-var_dump(file_exists($ca), is_readable($ca), @filesize($ca));
-exit;
-// if (!file_exists($ca))
-//     $ca = __DIR__ . '/ca.pem';
+if (getenv('DB_CA_B64')) {
+    $ca = sys_get_temp_dir() . '/ca.pem';
+    if (!file_exists($ca)) {
+        file_put_contents($ca, base64_decode(getenv('DB_CA_B64')));
+    }
+}
+else 
+    $ca = __DIR__ . '/ca.pem';
 
-// $ca = __DIR__ . '/ca.pem';
 
 $conn = mysqli_init();
 $conn->ssl_set(null, null, $ca, null, null);
