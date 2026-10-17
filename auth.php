@@ -13,6 +13,12 @@ if (isset($_SESSION['user'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SPEAK.ZONE - 온라인 커뮤니티 게시판">
+    <meta name="author" content="zephyr">
+    <meta property="og:title" content="로그인/회원가입 - SPEAK.ZONE">
+    <meta property="og:description" content="온라인 커뮤니티 게시판">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://speak-zone.onrender.com/auth.php">
     <title>SPEAK.ZONE - Login</title>
     <link rel="stylesheet" href="auth.css">
 </head>

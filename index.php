@@ -25,6 +25,12 @@ $stmt->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SPEAK.ZONE - 온라인 커뮤니티 게시판">
+    <meta name="author" content="zephyr">
+    <meta property="og:title" content="SPEAK.ZONE">
+    <meta property="og:description" content="온라인 커뮤니티 게시판">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://speak-zone.onrender.com/">
     <title>SPEAK.ZONE</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">

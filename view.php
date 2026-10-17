@@ -46,6 +46,12 @@ $next = $stmt->get_result()->fetch_assoc();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SPEAK.ZONE - 온라인 커뮤니티 게시판">
+    <meta name="author" content="zephyr">
+    <meta property="og:title" content="<?= htmlspecialchars($post['title']) ?>">
+    <meta property="og:description" content="온라인 커뮤니티 게시판">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://speak-zone.onrender.com/view.php?id=<?= (int) $post['id'] ?>">
     <title>SPEAK.ZONE - View</title>
     <link rel="stylesheet" href="view.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
