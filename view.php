@@ -103,7 +103,11 @@ $next = $stmt->get_result()->fetch_assoc();
                     <?php foreach($comments as $c): ?>
                         <li>
                             <div>
-                                <span><?= htmlspecialchars($c['username']) ?></span>
+                                <?php if($c['username'] == 'admin'): ?>
+                                    <span class="by_admin"><?= htmlspecialchars($c['username']) ?></span>
+                                <?php else: ?>
+                                    <span><?= htmlspecialchars($c['username']) ?></span>
+                                <?php endif; ?>
                                 <span><?= timeAgo($c['created_at']) ?></span>
                             </div>
                             <p><?= htmlspecialchars($c['content']) ?></p>
