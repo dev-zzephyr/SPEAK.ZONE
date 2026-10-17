@@ -1,5 +1,7 @@
 <?php
 function client_ip() {
+    error_log('XFF raw: ' . ($_SERVER['HTTP_X_FORWARDED_FOR'] ?? '-') . ' | CF: ' . ($_SERVER['HTTP_CF_CONNECTING_IP'] ?? '-') . ' | REMOTE: ' . ($_SERVER['REMOTE_ADDR'] ?? '-'));
+    
     if (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
         $ip = trim(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0]);
     else
