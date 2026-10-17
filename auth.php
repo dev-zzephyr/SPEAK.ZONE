@@ -23,8 +23,8 @@ if (isset($_SESSION['user'])) {
             <input name="id" type="text" placeholder="ID" required minlength="4" maxlength="15">
             <input name="pw" type="password" placeholder="PW" required minlength="6" maxlength="15">
             <div>
-                <button type="submit" name="action" value="signup">회원가입</button>
                 <button type="submit" name="action" value="login">로그인</button>
+                <button type="submit" name="action" value="signup">회원가입</button>
             </div>
         </form>
         <?php if (isset($_SESSION['error'])): ?>
