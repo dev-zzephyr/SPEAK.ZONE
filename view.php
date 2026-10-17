@@ -67,7 +67,11 @@ $next = $stmt->get_result()->fetch_assoc();
             </div>
             <div>
                 <ul>
-                    <li><?= htmlspecialchars($post['username']) ?></li>
+                    <?php if($post['username'] == 'admin'): ?>
+                        <li class="by_admin"><?= htmlspecialchars($post['username']) ?></li>
+                    <?php else: ?>
+                        <li><?= htmlspecialchars($post['username']) ?></li>
+                    <?php endif ?>
                     <li><?= htmlspecialchars($post['created_at']) ?></li>
                 </ul>
                 <ul>
@@ -127,7 +131,11 @@ $next = $stmt->get_result()->fetch_assoc();
                         <a href="view.php?id=<?= $prev['id'] ?>"><?= htmlspecialchars($prev['title']) ?></a>
                     </div>
                     <div>
-                        <span><?= htmlspecialchars($prev['username']) ?></span>
+                        <?php if($prev['username'] == 'admin'): ?>
+                            <span class="by_admin"><?= htmlspecialchars($prev['username']) ?></span>
+                        <?php else: ?>
+                            <span><?= htmlspecialchars($prev['username']) ?></span>
+                        <?php endif; ?>
                         <span><a href="#"><?= htmlspecialchars($prev['category']) ?></a></span>
                         <span><?= mb_substr($prev['created_at'], 0, 10) ?></span>
                     </div>
@@ -144,7 +152,11 @@ $next = $stmt->get_result()->fetch_assoc();
                         <a href="view.php?id=<?= $next['id'] ?>"><?= htmlspecialchars($next['title']) ?></a>
                     </div>
                     <div>
-                        <span><?= htmlspecialchars($next['username']) ?></span>
+                        <?php if($next['username'] == 'admin'): ?>
+                            <span class="by_admin"><?= htmlspecialchars($next['username']) ?></span>
+                        <?php else: ?>
+                            <span><?= htmlspecialchars($next['username']) ?></span>
+                        <?php endif; ?>
                         <span><a href="#"><?= htmlspecialchars($next['category']) ?></a></span>
                         <span><?= mb_substr($next['created_at'], 0, 10) ?></span>
                     </div>
