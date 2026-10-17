@@ -113,7 +113,7 @@ $stmt->close();
 </main>
 <div class="articleArea">
     <form method="get" action="index.php">
-        <input name="query" id="query" type="text" placeholder="검색어를 입력하세요" value="<?= htmlspecialchars($_GET['query'] ?? '') ?>">
+        <input name="query" id="query" type="search" placeholder="검색어를 입력하세요" value="<?= htmlspecialchars($_GET['query'] ?? '') ?>">
         <select name="type" id="type">
             <option value="post">게시물</option>
             <!-- <option value="user">사용자</option> -->
