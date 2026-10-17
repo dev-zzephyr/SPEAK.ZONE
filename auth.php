@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php
+session_start();
+require 'db.php';
+
+if (isset($_SESSION['user'])) {
+    echo "<script>alert('로그아웃을 먼저 해 주세요'); location.href = 'index.php';</script>";
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">

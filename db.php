@@ -64,4 +64,6 @@ if (!function_exists('timeAgo')) {
         return $diff . "년 전";
     }
 }
-?>
+
+require_once __DIR__ . '/log.php';
+log_access($conn);
