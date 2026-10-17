@@ -1,12 +1,6 @@
 <?php
 function client_ip() {
-    error_log('XFF raw: ' . ($_SERVER['HTTP_X_FORWARDED_FOR'] ?? '-') . ' | CF: ' . ($_SERVER['HTTP_CF_CONNECTING_IP'] ?? '-') . ' | REMOTE: ' . ($_SERVER['REMOTE_ADDR'] ?? '-'));
-    
-    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
-        $ip = trim(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0]);
-    else
-        $ip = $_SERVER['REMOTE_ADDR'] ?? '';
-
+    $ip = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? ($_SERVER['REMOTE_ADDR'] ?? '');
     return filter_var($ip, FILTER_VALIDATE_IP) ? $ip : '';
 }
 
