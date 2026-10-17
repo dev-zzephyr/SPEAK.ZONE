@@ -351,6 +351,16 @@ body {
 }
 
 @media (max-width: 700px) {
+  .container p {
+    width: 100%;
+  }
+  .container > div > div:last-of-type {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .container > div > div:last-of-type li {
+    font-size: 14px;
+  }
   .others {
     gap: 15px !important;
   }
