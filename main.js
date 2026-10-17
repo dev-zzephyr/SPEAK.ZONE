@@ -1,4 +1,4 @@
-alert(auth);
+// alert(auth);
 
 function goWrite() {
     if (auth == 0) {
