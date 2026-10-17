@@ -1,13 +1,16 @@
 # SPEAK.ZONE
 PHP와 MySQL로 만든 커뮤니티 게시판입니다.
+**접속 IP를 기록합니다.**
 
 v.0.0.0 알파 버전 (일부 공개)
+[데모 링크](https://speak-zone.onrender.com/)
 
 ## 제작자 정보
-[Github](https://github.com/dev-zzephyr)
-[Instagram](https://instagram.com/zz.ephyr_)
-[Velog](https://velog.io/@zzephyr_/posts)
-[Portfolio](https://dev-zzephyr.github.io/)
+이준혁
+- [Github](https://github.com/dev-zzephyr)
+- [Instagram](https://instagram.com/zz.ephyr_)
+- [Velog](https://velog.io/@zzephyr_/posts)
+- [Portfolio](https://dev-zzephyr.github.io/)
 
 ## 주요 기능
 - 회원가입 / 로그인 / 로그아웃
