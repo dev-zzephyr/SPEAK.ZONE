@@ -26,8 +26,8 @@ if (isset($_SESSION['user'])) {
     <a href="index.php" class="logo">SPEAK.ZONE</a>
     <div class="container">
         <form method="post" action="auth_process.php">
-            <input name="id" type="text" placeholder="ID" required minlength="4" maxlength="15">
-            <input name="pw" type="password" placeholder="PW" required minlength="6" maxlength="15">
+            <input name="id" type="text" placeholder="ID" required minlength="4" maxlength="20">
+            <input name="pw" type="password" placeholder="PW" required minlength="6" maxlength="20">
             <div>
                 <button type="submit" name="action" value="login">로그인</button>
                 <button type="submit" name="action" value="signup">회원가입</button>

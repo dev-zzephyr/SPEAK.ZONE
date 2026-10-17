@@ -2,7 +2,7 @@
 session_start();
 require 'db.php';
 
-$id = trim((string)($_POST['id'] ?? ''));
+$id = (string)($_POST['id'] ?? '');
 $pw = (string)($_POST['pw'] ?? '');
 $action = $_POST['action'] ?? '';
 $success = false;
@@ -13,17 +13,17 @@ function checkID($conn, $id, $login) {
     global $fail_reason;
 
     if (mb_strlen($id) < 4) {
-        $_SESSION['error'] = '아이디는 최소 4글자여야 합니다';
-        $fail_reason = 'bad format (id)';
+        $_SESSION['error'] = '아이디는 최소 4글자여야 합니다.';
+        $fail_reason = 'too short (id)';
         return false;
     }
     if (mb_strlen($id) > 15) {
-        $_SESSION['error'] = '아이디는 최대 15글자여야 합니다';
-        $fail_reason = 'bad format (id)';
+        $_SESSION['error'] = '아이디는 최대 15글자여야 합니다.';
+        $fail_reason = 'too long (id)';
         return false;
     }
     if (!preg_match('/^[a-zA-Z0-9]+$/', $id)) {
-        $_SESSION['error'] = '아이디에 영어, 숫자 이외의 문자가 들어있습니다';
+        $_SESSION['error'] = '아이디에 영어, 숫자 이외의 문자가 들어있습니다.';
         $fail_reason = 'bad chars (id)';
         return false;
     }
@@ -34,35 +34,45 @@ function checkID($conn, $id, $login) {
     $user = $stmt->get_result()->fetch_assoc();
 
     if ($user && !$login) {
-        $_SESSION['error'] = '아이디가 이미 존재합니다';
+        $_SESSION['error'] = '아이디가 이미 존재합니다.';
         $fail_reason = 'already exists (id)';
         return false;
     } elseif (!$user && $login) {
-        $_SESSION['error'] = '아이디가 존재하지 않습니다';
+        $_SESSION['error'] = '아이디가 존재하지 않습니다.';
         $fail_reason = 'not exists (id)';
         return false;
     }
     return true;
 }
 
-function checkPW($conn, $pw) {
+function checkPW($pw) {
     global $fail_reason;
 
     if (mb_strlen($pw) < 6) {
-        $_SESSION['error'] = '비밀번호는 최소 6글자여야 합니다';
+        $_SESSION['error'] = '비밀번호는 최소 6글자여야 합니다.';
+        $fail_reason = 'too short (pw)';
+        return false;
+    }
+    if (mb_strlen($pw) > 20) {
+        $_SESSION['error'] = '비밀번호는 최대 20글자여야 합니다.';
+        $fail_reason = 'too long (pw)';
+        return false;
+    }
+    if (!preg_match('/^[a-zA-Z0-9!@#$%^&*()\-_=+\[\]{}|;:,.<>?]+$/D', $pw)) {
+        $_SESSION['error'] = '비밀번호에 금지된 특수문자가 포함되어 있습니다. (!, ?, @, #, *, _ 가능)';
+        $fail_reason = 'bad chars (pw)';
+        return false;
+    }
+    if (!preg_match('/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+\[\]{}|;:,.<>?])/', $pw)) {
+        $_SESSION['error'] = '비밀번호는 영문, 숫자, 특수문자(!, ?, @, #, *, _ 가능)를 모두 포함해야 합니다.';
         $fail_reason = 'bad format (pw)';
         return false;
     }
-    if (mb_strlen($pw) > 15) {
-        $_SESSION['error'] = '비밀번호는 최대 15글자여야 합니다';
-        $fail_reason = 'bad format (pw)';
+    if (preg_match('/\s/', $pw)) {
+        $_SESSION['error'] = '비밀번호에는 공백을 사용할 수 없습니다.';
+        $fail_reason = 'including space (pw)';
         return false;
-    }
-    if (!preg_match('/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+\[\]{}|;:,.<>?])[a-zA-Z0-9!@#$%^&*()\-_=+\[\]{}|;:,.<>?]+$/', $pw)) {
-        $_SESSION['error'] = '비밀번호는 영문, 숫자, 특수문자를 모두 포함해야 합니다';
-        $fail_reason = 'bad format (pw)';
-        return false;
-    }
+}
 
     return true;
 }
@@ -74,7 +84,7 @@ if ($action != 'login' && $action != 'signup') {
     exit;
 }
 
-if (!checkID($conn, $id, ($action == 'login' ? true : false)) || !checkPW($conn, $pw)) {
+if (!checkID($conn, $id, ($action == 'login' ? true : false)) || !checkPW($pw)) {
     log_login($conn, $id, $action, false, $fail_reason);
     header('Location: auth.php');
     exit;
@@ -94,7 +104,7 @@ if ($action == 'signup') {
         $success = true;
         session_regenerate_id(true);
     } catch (mysqli_sql_exception $e) {
-        $_SESSION['error'] = '회원가입에 실패했습니다';
+        $_SESSION['error'] = '회원가입에 실패했습니다.';
         $fail_reason = 'system error';
     }
 } elseif ($action == 'login') {
@@ -108,7 +118,7 @@ if ($action == 'signup') {
         $success = true;
         session_regenerate_id(true);
     } else {
-        $_SESSION['error'] = '비밀번호가 틀렸습니다';
+        $_SESSION['error'] = '비밀번호가 틀렸습니다.';
         $fail_reason = 'wrong (pw)';
     }
 }

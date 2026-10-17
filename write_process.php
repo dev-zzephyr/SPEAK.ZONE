@@ -7,7 +7,7 @@ $auth = isset($_SESSION['user']) ? ($_SESSION['user'] == 'admin' ? 2 : 1) : 0;
 if($auth == 0) {
     echo "
     <script>
-    alert('로그인이 필요합니다');
+    alert('로그인이 필요합니다.');
     location.href = 'auth.php';
     </script>
     ";
@@ -17,7 +17,7 @@ if($auth == 0) {
 if($_SERVER['REQUEST_METHOD'] != 'POST') {
     echo "
     <script>
-    alert('잘못된 접근입니다');
+    alert('잘못된 접근입니다.');
     location.href = 'index.php';
     </script>
     ";
@@ -33,7 +33,7 @@ $action = $_POST['action'] ?? '';
 if (mb_strlen($title) < 1 || mb_strlen($content) < 1) {
     echo "
     <script>
-    alert('제목과 본문 모두 최소 1글자여야 합니다');
+    alert('제목과 본문 모두 최소 1글자여야 합니다.');
     history.back();
     </script>
     ";
@@ -91,7 +91,7 @@ if ($action == "write") {
     } catch (mysqli_sql_exception $e) {
         echo "
         <script>
-        alert('게시물 등록에 실패했습니다');
+        alert('게시물 등록에 실패했습니다.');
         history.back();
         </script>
         ";

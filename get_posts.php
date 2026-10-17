@@ -45,6 +45,6 @@ try {
     $stmt->close();
 
 } catch (mysqli_sql_exception $e) {
-    error_log('get_posts failed: ' . $e->getMessage());
+    error_log('게시물을 불러오는 데 실패했습니다. ' . $e->getMessage());
     $posts = [];
 }

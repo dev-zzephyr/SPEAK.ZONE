@@ -5,7 +5,7 @@ require 'db.php';
 if (!isset($_SESSION['user'])) {
     echo "
     <script>
-    alert('로그인이 필요합니다');
+    alert('로그인이 필요합니다.');
     location.href = 'auth.php';
     </script>
     ";
@@ -19,7 +19,7 @@ $cols = ['like' => 'likes', 'hate' => 'hates'];
 if ($id <= 0 || !isset($cols[$type])) {
     echo "
     <script>
-    alert('잘못된 접근입니다');
+    alert('잘못된 접근입니다.');
     location.href = 'index.php';
     </script>
     ";

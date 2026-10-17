@@ -20,15 +20,15 @@
         <form method="post" action="write_process.php">
             <div style="grid-area: b1;">
                 <label for="title">제목</label>
-                <input name="title" type="text" placeholder="글의 제목을 입력하세요" required minlength="1" maxlength="20">
+                <input name="title" type="text" placeholder="글의 제목을 입력하세요." required minlength="1" maxlength="20">
             </div>
             <div style="grid-area: b2;">
                 <label for="category">카테고리</label>
-                <input name="category" type="text" value="일반" placeholder="글의 카테고리를 입력하세요" required minlength="1" maxlength="20">
+                <input name="category" type="text" value="일반" placeholder="글의 카테고리를 입력하세요." required minlength="1" maxlength="20">
             </div>
             <div style="grid-area: b3;">
                 <label for="content">본문</label>
-                <textarea name="content" placeholder="본문을 입력하세요" required minlength="1" maxlength="4000"></textarea>
+                <textarea name="content" placeholder="본문을 입력하세요." required minlength="1" maxlength="4000"></textarea>
                 <span>0/4000</span>
             </div>
             <div style="grid-area: b4;">

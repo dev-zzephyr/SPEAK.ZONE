@@ -11,7 +11,7 @@ $post = $stmt->get_result()->fetch_assoc();
 
 if (!$post) {
     http_response_code(404);
-    exit('존재하지 않는 게시글입니다.');
+    exit('존재하지 않는 게시물입니다.');
 }
 
 $stmt = $conn->prepare("SELECT * FROM comments WHERE post_id = ? ORDER BY id DESC");
@@ -63,7 +63,7 @@ $next = $stmt->get_result()->fetch_assoc();
         <div>
             <div>
                 <span># <a href="index.php?query=<?= urlencode($post['category']) ?>"><?= htmlspecialchars($post['category']) ?></a></span>
-                <h1><?= htmlspecialchars($post['title']) ?></h1>
+                <h2><?= htmlspecialchars($post['title']) ?></h2>
             </div>
             <div>
                 <ul>
@@ -118,7 +118,7 @@ $next = $stmt->get_result()->fetch_assoc();
                         </li>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <span>댓글이 없습니다</span>
+                    <span style="margin-bottom: 40px;">댓글이 없습니다.</span>
                 <?php endif; ?>
             </ul>
         </div>
