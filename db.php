@@ -12,6 +12,8 @@ $cfg = file_exists(__DIR__ . '/config.local.php')
     ];
 
 $ca = '/etc/secrets/ca.pem';
+var_dump(file_exists($ca), is_readable($ca), @filesize($ca));
+exit;
 // if (!file_exists($ca))
 //     $ca = __DIR__ . '/ca.pem';
 
